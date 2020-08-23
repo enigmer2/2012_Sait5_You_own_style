@@ -1,0 +1,1113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Твой Личный Cтиль</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="menu.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="scriptA.js"></script>
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.9.custom.min.js"></script>
+<script type="text/javascript" src="cssrefresh.js"></script>
+<script type="text/javascript" src="fullscreen.js"></script>
+<script type="text/javascript">
+$('#Man').click(
+function(){
+$.ajax({
+	type:"POST",
+	url:"ManMenu.php",
+	data:"pol="+ $(".Man").attr('id'),
+	success:function(html)
+		{
+			$(".Category").html(html);
+		}});
+	return false;	
+});
+			
+$('#Women').click(
+function(){
+$.ajax({
+	type:"POST",
+	url:"WomenMenu.php",
+	data:"pol="+ $('.Women').attr('id'),
+	success:function(html)
+		{
+			$(".Category").html(html);
+		}});
+	return false;	
+});
+
+function brawser () {
+if ( $.browser.msie ) {
+		$('.reseze_out').css('visibility','hidden'),
+		$('.full').css('width','0 px'),
+		$('.reseze_in').css('visibility','hidden');
+	}
+else if( $.browser.opera ) {
+		$('.reseze_out').css('visibility','hidden'),
+		$('.reseze_in').css('visibility','hidden'),
+		$('.full').css('width','0 px'),
+		$('.Category').css('background-color','#ffffff');
+	}
+}
+
+(function($){
+		$(document).ready(function(){  //Функция обратного вызова вызывающаяся тогда когда документ загрузится
+		$('.up').click(function(){ //К ссылке <a class="up" href="#">На вверх</a> вешаем обработчик click
+		$('html, body').animate({  //К body и html принимаем анимацию
+		scrollTop:0  //Скрол на вверх к 0
+		},1000);  //За 1000 мс (1сек)
+		return false; //Отменяем действие самой ссылки
+		});
+	});
+})(jQuery);  //Конец обвертке
+		
+$(document).ready(function() {
+	$("#nav .nav1").click(function() {
+		if (!$(this).next().is(":visible")) {
+			$(this).find("span").html('&#9660');
+			$(this).next().slideDown('fast');
+		}
+		else {
+			$(this).find("span").html('&#9658;');
+			$(this).next().slideUp('fast');
+		}
+		return false;
+	});
+});
+
+function LogIn()		{
+		$('.LogIn').animate({left:"35px"},900).css('visibility','visible'),
+		$('#Cart').animate({left:"-140px"},900).css('visibility','hidden'),
+		$('.Category').animate({left:"-230px"},900).css('visibility','hidden'),
+		$('.FormSearchAnswer').animate({left:"194px"},900).css('width','90%');}
+
+function OpenSearch()		{
+		$('.LogIn').animate({left:"-163px"},900).css('visibility','hidden'),
+		$('#Cart').animate({left:"-140px"},900).css('visibility','hidden'),
+		$('.Category').animate({left:"35px"},900).css('visibility','visible'),
+		$('.FormSearchAnswer').animate({left:"360px"},900).css('width','73%');}
+		
+function OpenCompare()		{
+		$('.LogIn').animate({left:"-163px"},900).css('visibility','hidden'),
+		$('#Cart').animate({left:"-140px"},900).css('visibility','hidden'),
+		$('.Category').animate({left:"-352px"},900).css('visibility','hidden'),
+		$('.FormSearchAnswer').animate({left:"194px"},900).css('width','90%');}
+		
+function OpenCart()		{
+		$('.LogIn').animate({left:"-163px"},900).css('visibility','hidden'),
+		$('#Cart').animate({left:"35px"},900).css('visibility','visible'),
+		$('.Category').animate({left:"-230px"},900).css('visibility','hidden'),
+		$('.FormSearchAnswer').animate({left:"194px"},900).css('width','90%');}
+		
+function open_full() {
+		$('.ClothesPhoto').css('width','95%'),
+		$('.title, .price,').css('margin-left','5px'),
+		$('.title, .price, .ClothesPhoto').css('text-align','left'),
+		$('#CompareForm').css('visibility','visible');
+}
+function close_full() {
+		$('.ClothesPhoto').css('width','170px'),
+		$('.title, .price,').css('margin-left','5px'),		
+		$('.title, .price, .ClothesPhoto').css('text-align','center'),
+		$('#CompareForm').css('visibility','hidden');
+}
+
+</script>
+</head>
+<body onLoad="brawser()">
+
+<div id="" class="MenuUser">
+  <div class="TopMenu" style="width:15%" border>
+    	Выход
+    </div>
+    <div class="TopMenu" onClick="OpenCart()" style="width:15%" border>
+    	Корзина
+    <br>
+      </div>
+	<a href="3.html">
+    	<div class="TopMenu" style="width:15%" border>
+        	Личный Кабинет
+        </div>
+  	</a>
+	<a href="5.html">
+    	<div class="TopMenu" style="width:19%" border>
+        	Карта пользователя
+        </div>
+    </a>   
+    	<a href="1.html">
+   	<div class="TopMenu" style="width:11%" border>
+        	Одежда
+        </div>
+    </a> 
+  <div onClick="LogIn()" class="TopMenu" style="width:11%" border>Вход</div>
+</div>
+<div  class="MenuUser2">
+    <div onClick="OpenSearch()" border  class="Male">	Поиск    </div>
+	<div id="Men" class="Male" onClick="" border>&nbsp;		Мужская одежда&nbsp;</div>
+    <div id="Women" class="Male" onClick="" border>&nbsp;	Женская одежда&nbsp;</div>
+    <div id="" class="Male" onClick="" border>&nbsp;		Сравнить выделеные ( шт. )&nbsp;</div>
+    <div id="" class="Male" onClick="" border>&nbsp;	Сортировать по цене &darr; &uarr;</div>
+    <div class="Male" border>
+    	<a href="#" onClick="close_full()">
+            <div class="point">
+                <div class="res1"></div>
+                <div class="res1"></div>
+                <div class="res1"></div>
+                <div class="res1"></div>
+            </div>
+        </a>
+    	<a href="#" onClick="open_full()">
+      		<div class="point">
+                <div class="res2"></div>
+                <div class="res2"></div>
+                <div class="res2"></div>
+            </div>
+        </a>
+    </div>
+    <div class="Male" border>
+        <div class="full">
+            <img class="reseze_out" onclick="$(document).fullScreen(true) && element.mozRequestFullScreen()" src="reseze_out.png">
+            <img class="reseze_in" onclick="$(document).fullScreen(false)" src="reseze_in.png"><br>
+        </div>
+    </div>
+</div>
+<div class="LogIn">
+    <br>
+        <form>
+        <div align="center">Логин</div>
+			<input id="" class="SearchPrice" type="text" placeholder="email или ник">
+        <div align="center">Пароль</div>
+    		<input id="" class="SearchPrice" type="password" placeholder="******"><br>
+            <input id="" class="SearchPrice" type="submit" value="Войти" style="width:160px !important; cursor:pointer !important;">
+        </form>
+</div>
+<div style="position: fixed; top: 27px; right: 0px; display: block; height: 60px;width: 100%; z-index: 6; 
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 47%, rgba(255,255,255,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+">.</div>
+<div id="" class="Category">
+    <div id="" class="FormSearch">
+<div id="main">
+        <div id="nav">
+        
+          <a href="" class="nav1"><span>&#9658;</span> Выбор категории одежды</a>
+            <div class="subnav">
+            
+<div id="" class="">
+<div class="treeview" style="padding:-40px;">
+  <ul>
+        <li>
+            <div>
+            	<p>
+            	<a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Одежда</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Выше пояса</a>
+                  </p></div>
+                    <ul>
+                        <li><div id="" class="Man"><p>
+                                    <a href="#">Рубашка(длинный рукав, муж.)</a>
+                      </p></div></li>
+                        <li><div id="" class="Man"><p>
+                                    <a href="#">Рубашка(короткий рукав, муж.)</a>
+                        </p></div></li>
+                        <li><div id="" class="Man"><p>
+                                    <a href="#">Свитер(муж.)</a>
+                        </p></div></li>
+                        
+                        <li><div><p>
+                                    <a href="#">Рубашка(длинный рукав, жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Рубашка(короткий рукав, жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Жилет классический (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Джинсовая куртка (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Блузка (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Топ (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Пиджак, жакет (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Кардиган (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Туника (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Футболка (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Свитер (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Водолазка, бодлон (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Топ на бретельках (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Жилет стёганый (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Болеро (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Кофта (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Пуловер (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Джемпер (жен.)</a>
+                        </p></div></li>
+
+
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Ниже пояса</a>
+                    </p></div>
+                    <ul>
+                        <li id="" class="Man"><div><p>
+                                    <a href="#">Джинсы (муж.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Юбка (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шорты (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Джинсы (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Брюки повседневные (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шорты (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Леггинсы, лосины (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Капри (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Бриджи (жен.)</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На всё тело</a>
+                    </p></div>
+                    <ul>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Платье повседневное (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Платье вечернее (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Комбинезон (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Платье летнее (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Платье деловое (жен.)</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+				<li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Верхняя демисезонная</a>
+                    </p></div>
+                    <ul>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Куртка (муж.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Плащ (муж.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Куртка (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Плащ (жен.)</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+				<li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Верхняя зимняя</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Пуховик (муж.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Куртка (муж.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Пуховик (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Куртка (жен.)</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+				<li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Пляжная</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Купальник слитный</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Бикини</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+          </ul>
+    </li>
+
+    
+      <li>
+            <div><p><a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Обувь</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Женская обувь</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Сандали, Босоножки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Модельный туфли</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Ботинки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Демисезонные сапоги</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Домашние тапочки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Батильоны</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Балетки</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Мужская обувь</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Туфли</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Красовки</a>
+                         </p></div></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+     <li>
+            <div><p><a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Нижнее белье</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Женская бельё</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Пижима</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Ночная сорочка</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Стринги</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Бюсгалтер</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Трусы-шорты</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Трусы</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Мужское бельё</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Боксерки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Плавки</a>
+                         </p></div></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        
+        
+    
+        <li>
+            <div><p><a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Головные уборы</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Женские головные уборы</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Кепка, бейсболка</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка меховая</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка вязаная</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Матерчатая,соломенная</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Кружевная шапочка</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка-ушанка</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Мужские головные уборы</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Кепка, бейсболка</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка меховая</a>
+                         </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка-ушанка</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        
+        
+        <li>
+            <div><p><a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Аксессуары</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На голове</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Серьги</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На шее</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Шарф декоративный</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шарф тёплый</a>
+                         </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Бусы</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На Руках</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Варежки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Браслеты</a>
+                         </p></div></li>
+                         <li><div><p>
+                                    <a href="#">Кольца</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На теле</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Пояс</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Ремень</a>
+                         </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">С собой</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Кошелёк, портмоне</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Чехлы, сумочка для телефона</a>
+                         </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Сумки</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Сумка женская</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+
+          </ul>
+        </li>
+        
+    </ul>
+</div>
+</div>
+
+</div>
+                    <a href="" class="nav1"><span>&#9658;</span>&nbsp;Город в котором ищем</a>
+            <div class="subnav">
+            <Form>
+                &nbsp;<input name="ва" type="checkbox" value="ва"  checked/>&nbsp;Гомель<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Брест<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Минск<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Гродно<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Могилёв<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Витебск<br>
+
+            </Form>
+          </div>
+
+          <a href="" class="nav1"><span>&#9658;</span>&nbsp;Материалы</a>
+            <div class="subnav">
+              <Form>
+                    &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;хлопок<br>
+                    &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;щёлк<br>
+                    &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;лён<br>
+              </Form>
+            </div>
+
+          <a href="" class="nav1"><span>&#9658;</span> Цвета</a>
+            <div class="subnav">
+              <table width="200" cellspacing="3" align="center">
+                  <tr>
+                  	<td width="30" height="30" 	bgcolor="#990099" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td width="30"	bgcolor="#FF00FF" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td width="30"	bgcolor="#BEBA83" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td width="30"	bgcolor="#666600" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td width="30"	bgcolor="#000000" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td width="30"	bgcolor="#666666" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td width="30"	bgcolor="#999999" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td width="30"	bgcolor="#FFFFFF" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                  </tr>
+                  <tr>
+                  	<td height="30"	bgcolor="#330099" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td 			bgcolor="#0000FF" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td 			bgcolor="#00CCFF" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td 			bgcolor="#006600" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td 			bgcolor="#66FF00" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td 			bgcolor="#FFFF00" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td 			bgcolor="#FF9900" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                    <td 			bgcolor="#FF0000" border="0"><input name="ва" type="checkbox" value="ва" class="check" /></td>
+                  </tr>
+              </table>
+            </div>
+    	    <a href="" class="nav1"><span>&#9658;</span>&nbsp;Размеры</a>
+            <div class="subnav">
+            <Form>
+           	  &nbsp;<input name="ва" type="checkbox" value="ва" checked/>&nbsp;Мои размеры<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;XXL<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;XXXL<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;ML<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;XL<br>
+            </Form>
+          </div>
+ 
+          <a href="" class="nav1"><span>&#9658;</span>&nbsp;Магазины</a>
+          <div class="subnav">
+            <Form>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Адресс магазин 1<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Адресс магазин 2<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Адресс магазин 3<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Адресс магазин 4<br>
+            </Form>
+        </div>
+ 
+            <a href="" class="nav1"><span>&#9658;</span>&nbsp;Бренды</a>
+            <div class="subnav">
+            <Form>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Abibas<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Tree<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Levi'S<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Boss<br>
+            </Form>
+            </div>
+ 
+            <a href="" class="nav1"><span>&#9658;</span>&nbsp;Сезон</a>
+            <div class="subnav">
+            <Form>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Лето<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Зима<br>
+                &nbsp;<input name="ва" type="checkbox" value="ва" />&nbsp;Весна(Осень)<br>
+            </Form>
+            </div>
+      </div>
+  </div>
+</div>
+<hr>
+        <div id="" class="">
+            <Form>
+            &nbsp;Показать &nbsp;<br>
+            <input name="ва" type="checkbox" value="ва" />новинки 
+            &nbsp;&nbsp;&nbsp;&nbsp;<input name="ва" type="checkbox" value="ва" />скидки<br>
+          </Form>
+        </div><br>
+        <form>
+			<div>&nbsp;Цена&nbsp;одежды</div>
+        от&nbsp;<input type="text" id="" class="SearchPrice" placeholder="минимальная цена"><br>
+		до&nbsp;<input type="text" id="" class="SearchPrice" placeholder="максимальная цена"><br>
+        </form>
+        <input type="submit" id="" class="SearchPrice" value="Поиск" style="width:180px !important; cursor:pointer !important;">
+</div>
+<div id="" class="FormSearchAnswer">
+<div id="" class="SearchAnswer">
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+			<div style="float:left">
+            	<div><input type="checkbox">
+				<span style="font-size:10px; vertical-align:middle; margin-left:5px">добавить в сравнение</span>
+            	</input></div>
+				<img src="Di31.png" width="140" height="200">
+            	<label class="title">Бренд</label>
+				<label class="price">200'000 р.</label>
+            	<div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+            </div>
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">
+                            <div id="" class="size" style="background-color:#EB487C;">XL</div>
+                            <div id="" class="size" style="background-color:#49B401;">XXL</div>
+                            <div id="" class="size" style="background-color:#49B401;">XXXL</div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+		</div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+  			<div style="float:left">
+                <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span>
+                </input></div>
+                <img src="Di33.png" width="140" height="200">
+                <label class="title">Бренд</label>
+                <label class="price">200'000 р.</label>
+                <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+            </div>
+            <div id="CompareForm">
+				<div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">
+                            <div id="" class="size" style="background-color:#EB487C;">XL</div>
+                            <div id="" class="size" style="background-color:#49B401;">XXL</div>
+                            <div id="" class="size" style="background-color:#49B401;">XXXL</div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+                </div>
+            </div>
+		</div>
+        
+        <div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di31.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">100'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+            
+            
+    </div>
+        
+        <div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di34.png" width="140" height="200">
+            <label class="title">Бренд</label>
+			<label class="price">300'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di32.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di34.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di31.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di32.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di33.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">600'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+        
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di31.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">400'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di31.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di33.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+        
+        <div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di31.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">100'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+        
+        <div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di34.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">300'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di32.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di34.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+			<div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di31.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di32.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">200'000 р.</label>
+			<div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+
+		<div id="" class="ClothesPhoto" onClick="" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di33.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">600'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+        
+		<div id="" class="ClothesPhoto" onClick="" border>
+			<div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в сравнение</span></input></div>
+            <img src="Di31.png" width="140" height="200">
+            <label class="title">Бренд</label>
+            <label class="price">400'000 р.</label>
+            <div><input type="button" class="SearchPrice" value="В корзину" style="cursor:pointer;"></div>
+        </div>
+                <div id="foot">
+                	<div id="footer">
+                		<hr>                        
+                    	<div id="span1" class="classname">&copy;</div>
+      					<div id="span2">2012 - 1015 г. Все права защищены </div> 
+    	                <div id="span3">Создатели:<br><br> Дмитрий Родионов  <a href="mailto:killmeplease@mail.ru">написать письмо</a> <br>Дмитрий Дацкевич <a href="mailto:enigmer@bk.ru">написать письмо</a></div>
+	               	</div>
+                </div>
+  </div>        
+</div>
+<div id="Cart">
+<br>
+    &nbsp;&nbsp;Корзина
+</div>
+<div id="Open_cart_container" class="up">
+
+    <br>
+    <div class="up" style="background:#A1D102 transparent !important; top:35%; position:relative; color:#192E1A;  font-size: 30px;">
+    	<br>&uarr;<br><br><br>
+    </div>
+
+
+</div>
+
+</body>
+</html>

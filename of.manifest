@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# r128
+# JavaScript
+./jquery-1.4.4.js
+./jquery-1.7.1.min.js
+./ajax.js
+./scriptA.js
+./fullscreen.js
+
+# stylesheets
+./style.css
+./menu.css
+
+# images
+./Di31.png
+./Di32.png
+./Di33.png
+./Di34.png
+./reseze_out.png
+./reseze_in.png

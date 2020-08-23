@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Документ без названия</title>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script src="js/ajax.js"></script>
+</head>
+<body>
+
+<div id="content"></div>
+<script language="javascript">
+
+$(document).ready(
+function(){
+			$.ajax({
+				type:"POST",
+				url:"http://maps.googleapis.com/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&sensor=true_or_false",
+				dataType: "xml",
+				success:function(html)
+				{
+					$("#content").html(html);
+				}});
+				return false;	
+		});
+
+</script>
+</body>
+
+</html>

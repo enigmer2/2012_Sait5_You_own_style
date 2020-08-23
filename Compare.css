@@ -1,0 +1,21 @@
+/* Compare */
+.table_art 
+{
+	float: left;
+	background-color: #49B401;
+	margin: -2px 5px -2px 5px;
+	padding: 1px 5px 1px 5px;
+	font-size: 11px;
+	color: #FFF;
+	width: 115px;
+}
+	
+.table_data
+{
+	float: left;
+	margin: -2px 5px -2px 5px;
+	padding: 1px 5px 1px 5px;
+	font-size: 11px;
+	color: #000;
+	width: 98%;
+}

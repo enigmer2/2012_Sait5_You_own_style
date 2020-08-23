@@ -1,0 +1,2296 @@
+<!DOCTYPE HTML>
+<html  manifest="off.manifest">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Твой Личный Cтиль</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="menu.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="jquery-1.4.4.js"></script>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="scriptA.js"></script>
+<script type="text/javascript" src="scriptB.js"></script>
+<script type="text/javascript" src="fullscreen.js"></script>
+<script type="text/javascript">
+$(document).ready(
+function() {
+	$('#min').blur(function(){ 
+	mini = $('#min_price').val();
+	alert("посылаю запрос на сервер значение = \' "+ mini +" \'") 
+	}),
+	$('#max').blur(function(){ 
+	maxi = $('#max_price').val();
+	alert("посылаю запрос на сервер значение = \' "+ maxi +" \'") 
+	});
+});
+
+function cheker_menu(val){
+	if($(':checked').checked = 1){
+		alert("посылаю запрос на сервер значение = \' "+ val +" \'");
+		$('.loading').fadeIn(500);
+	}
+	else{
+			alert("не работает");
+		};
+};
+
+		
+</script>
+
+</head>
+<body onLoad="brawser()">
+
+<div id="" class="MenuUser">
+	<div id="ex" class="TopMenu" style="width:15%" border>Выход</div>
+	<a id="ex" href="3.html"><div id="ex" class="TopMenu" style="width:15%;" border>Личный Кабинет</div></a>
+	<a href="5.html"><div class="TopMenu" style="width:19%;" border>Карта пользователя</div></a>   
+    <a href="1.html"><div class="TopMenu" style="width:11%;" border>Главная</div></a> 
+	<div id="in" class="TopMenu" style="width:19%;" onClick="LogIn()" border>Вход / Регистрация</div>
+</div>
+<div  class="MenuUser2">
+    <div id="sort2" class="Male" border><a href="" class="nav2">
+            <div class="point">
+                <div class="res1"></div>
+                <div class="res1"></div>
+                <div class="res1"></div>
+                <div class="res1"></div>
+            </div>
+        </a>
+    	<a href="" class="nav3">
+      		<div class="point">
+                <div class="res2"></div>
+                <div class="res2"></div>
+                <div class="res2"></div>
+            </div>
+        </a>
+        <div class="full">
+        	<img class="reseze_out" onclick="$(document).fullScreen(true) && element.mozRequestFullScreen()" src="reseze_out.png">
+            <img class="reseze_in" onclick="$(document).fullScreen(false)" src="reseze_in.png"><br>
+        </div></div>    
+    <div id="sort" class="Male" border>Сортировать по &#9660;
+		<div>
+			<div class="sortIn" border>цене</div> 
+    	    <div class="sortIn" border>новизне</div>
+    	    <div class="sortIn" border>скидкам</div>
+            <div class="sortIn" border>популярности</div>
+        </div>
+    </div>
+    <div id="man" class="Man" onClick="send_msg('ManMenu', 'Man')" border> Мужская одежда</div>
+    <div id="woman" class="Woman"  onClick="send_msg('WomenMenu', 'Woman')" border> Женская одежда</div>
+    <div id="search" onClick="OpenSearch()" border  class="Male">Поиск</div>
+</div>
+<div class="LogIn">
+    <br>
+        <form align="center">
+        <div>Логин</div>
+			<input id="" class="SearchPrice" type="text" placeholder="email или ник">
+        <div>Пароль</div>
+    		<input id="" class="SearchPrice" type="password" placeholder="******"><br>
+            <input id="" class="SearchPrice" type="submit" value="Войти" style="width:160px !important; cursor:pointer !important;"><br>
+            <input style=" cursor:pointer; font-size:12px;" type="checkbox">запомнить меня<br>
+            <span><a href="#" style="text-decoration:underline; cursor:pointer; font-size:12px;">забыли пароль</a></span><br>
+            <input id="" class="SearchPrice" type="button" value="Регистрация" style="width:160px !important; cursor:pointer !important;"/>
+        </form>
+</div>
+
+<div style="position: fixed; top: 27px; right: 0px; display: block; height: 60px;width: 100%; z-index: 6; 
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 47%, rgba(255,255,255,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+">.</div>
+<div id="" class="Category">
+<div id="" class="FormSearch">
+<div id="main">
+<div id="nav">
+<a href="" class="nav1" border><span>&#9658;</span> Выбор категории одежды</a>
+<div class="subnav">
+
+<div id="" class="cat">
+<div class="treeview" style="padding:-40px;">
+  <ul>
+        <li>
+            <div>
+            	<p>
+            	<a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Одежда</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Выше пояса</a>
+                  </p></div>
+                    <ul>
+                        <li><div id=""><p>
+                                    <a href="#">Рубашка(длинный рукав, муж.)</a>
+                      </p></div></li>
+                        <li><div id=""><p>
+                                    <a href="#">Рубашка(короткий рукав, муж.)</a>
+                        </p></div></li>
+                        <li><div id=""><p>
+                                    <a href="#">Свитер(муж.)</a>
+                        </p></div></li>
+                        
+                        <li><div><p>
+                                    <a href="#">Рубашка(длинный рукав, жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Рубашка(короткий рукав, жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Жилет классический (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Джинсовая куртка (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Блузка (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Топ (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Пиджак, жакет (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Кардиган (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Туника (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Футболка (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Свитер (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Водолазка, бодлон (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Топ на бретельках (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Жилет стёганый (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Болеро (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Кофта (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Пуловер (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Джемпер (жен.)</a>
+                        </p></div></li>
+
+
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Ниже пояса</a>
+                    </p></div>
+                    <ul>
+                        <li id=""><div><p>
+                                    <a href="#">Джинсы (муж.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Юбка (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шорты (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Джинсы (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Брюки повседневные (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шорты (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Леггинсы, лосины (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Капри (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Бриджи (жен.)</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На всё тело</a>
+                    </p></div>
+                    <ul>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Платье повседневное (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Платье вечернее (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Комбинезон (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Платье летнее (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Платье деловое (жен.)</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+				<li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Верхняя демисезонная</a>
+                    </p></div>
+                    <ul>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Куртка (муж.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Плащ (муж.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Куртка (жен.)</a>
+                        </p></div></li>
+                        <li id="" class="W"><div><p>
+                                    <a href="#">Плащ (жен.)</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+				<li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Верхняя зимняя</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Пуховик (муж.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Куртка (муж.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Пуховик (жен.)</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Куртка (жен.)</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+				<li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Пляжная</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Купальник слитный</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Бикини</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+          </ul>
+    </li>
+
+    
+      <li>
+            <div><p><a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Обувь</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Женская обувь</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Сандали, Босоножки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Модельный туфли</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Ботинки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Демисезонные сапоги</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Домашние тапочки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Батильоны</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Балетки</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Мужская обувь</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Туфли</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Красовки</a>
+                         </p></div></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+     <li>
+            <div><p><a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Нижнее белье</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Женская бельё</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Пижима</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Ночная сорочка</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Стринги</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Бюсгалтер</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Трусы-шорты</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Трусы</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Мужское бельё</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Боксерки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Плавки</a>
+                         </p></div></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        
+        
+    
+        <li>
+            <div><p><a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Головные уборы</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Женские головные уборы</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Кепка, бейсболка</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка меховая</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка вязаная</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Матерчатая,соломенная</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Кружевная шапочка</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка-ушанка</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Мужские головные уборы</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Кепка, бейсболка</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка меховая</a>
+                         </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шапка-ушанка</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        
+        
+        <li>
+            <div><p><a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Аксессуары</a></p></div>
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На голове</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Серьги</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На шее</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Шарф декоративный</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Шарф тёплый</a>
+                         </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Бусы</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На Руках</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Варежки</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Браслеты</a>
+                         </p></div></li>
+                         <li><div><p>
+                                    <a href="#">Кольца</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">На теле</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Пояс</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Ремень</a>
+                         </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">С собой</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Кошелёк, портмоне</a>
+                        </p></div></li>
+                        <li><div><p>
+                                    <a href="#">Чехлы, сумочка для телефона</a>
+                         </p></div></li>
+                    </ul>
+                </li>
+                <li class="cl">
+                    <div><p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Сумки</a>
+                    </p></div>
+                    <ul>
+                        <li><div><p>
+                                    <a href="#">Сумка женская</a>
+                        </p></div></li>
+                    </ul>
+                </li>
+
+          </ul>
+        </li>
+        
+    </ul>
+</div>
+</div>
+
+</div>
+	<a href="" class="nav1" border><span>&#9658;</span>&nbsp;Город в котором ищем</a>
+			<div class="subnav">
+				<form>
+					&nbsp;<input name="gomel" type="checkbox" value="gomel" onChange="cheker_menu('ID города')"/>&nbsp;Гомель<br>
+					&nbsp;<input name="brest" type="checkbox" value="brest" onChange="cheker_menu('ID города')" />&nbsp;Брест<br>
+					&nbsp;<input name="minsk" type="checkbox" value="minsk" onChange="cheker_menu('ID города')" />&nbsp;Минск<br>
+					&nbsp;<input name="grodno" type="checkbox" value="grodno" onChange="cheker_menu('ID города')" />&nbsp;Гродно<br>
+					&nbsp;<input name="mogilev" type="checkbox" value="mogilev" onChange="cheker_menu('ID города')" />&nbsp;Могилёв<br>
+					&nbsp;<input name="vitebsk" type="checkbox" value="vitebsk" onChange="cheker_menu('ID города')" />&nbsp;Витебск<br>
+				</form>
+			</div>
+
+			<a href="" class="nav1" border><span>&#9658;</span>&nbsp;Материалы</a>
+			<div class="subnav">
+				<Form>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onChange="cheker_menu('ID материала')"/>&nbsp;хлопок<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onChange="cheker_menu('ID материала')"/>&nbsp;щёлк<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onChange="cheker_menu('ID материала')"/>&nbsp;лён<br>
+				</Form>
+			</div>
+
+			<a href="" class="nav1" border><span>&#9658;</span> Цвета</a>
+			<div class="subnav">
+				<br>
+				<table cellspacing="0" align="center" style="padding:2px; width:160px;" border="0">
+					<tr>
+						<td width="5" height="5" bgcolor="#990099">
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#990099')" /></td>
+						<td bgcolor="#FF00FF">
+							<input name="ва" type="checkbox" value="ва" class="check"  onClick="cheker_menu('#FF00FF')" /></td>
+						<td bgcolor="#BEBA83">
+							<input name="ва" type="checkbox" value="ва" class="check"  onClick="cheker_menu('#BEBA83')" /></td>
+						<td bgcolor="#666600">
+							<input name="ва" type="checkbox" value="ва" class="check"  onClick="cheker_menu('#666600')" /></td>
+						<td bgcolor="#000000">
+							<input name="ва" type="checkbox" value="ва" class="check"  onClick="cheker_menu('#000000')" /></td>
+						<td bgcolor="#666666">
+							<input name="ва" type="checkbox" value="ва" class="check"  onClick="cheker_menu('#666666')" /></td>
+						<td bgcolor="#999999">
+							<input name="ва" type="checkbox" value="ва" class="check"  onClick="cheker_menu('#999999')" /></td>
+						<td bgcolor="#FFFFFF">
+							<input name="ва" type="checkbox" value="ва" class="check"  onClick="cheker_menu('#FFFFFF')" /></td>
+					</tr>
+					<tr>
+						<td height="5"	bgcolor="#330099" disabled>
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#330099')" disabled /></td>
+						 <td bgcolor="#0000FF">
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#0000FF')" /></td>
+						<td bgcolor="#00CCFF">
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#00CCFF')" /></td>
+						<td bgcolor="#006600">
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#006600')" /></td>
+						<td bgcolor="#66FF00">
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#66FF00')" /></td>
+						<td bgcolor="#FFFF00">
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#FFFF00')" /></td>
+						<td bgcolor="#FF9900">
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#FF9900')" /></td>
+						<td bgcolor="#FF0000">
+							<input name="ва" type="checkbox" value="ва" class="check" onClick="cheker_menu('#FF0000')" /></td>
+					</tr>
+				</table>
+				<br>
+			</div>
+
+			<a href="" class="nav1" border><span>&#9658;</span>&nbsp;Размеры</a>
+			<div class="subnav">
+				<Form>
+					&nbsp;<input name="ва" type="checkbox" value="ва"  onClick="cheker_menu('ID размера')" checked/>&nbsp;Мои размеры<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onClick="cheker_menu('ID размера')"  />&nbsp;XXL<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onClick="cheker_menu('ID размера')"  />&nbsp;XXXL<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва"  onClick="cheker_menu('ID размера')" />&nbsp;ML<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onClick="cheker_menu('ID размера')"  />&nbsp;XL<br>
+				</Form>
+			</div>
+
+			<a href="" class="nav1" border><span>&#9658;</span>&nbsp;Магазины</a>
+			<div class="subnav">
+				<Form>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onClick="cheker_menu('ID магазина 1')" />&nbsp;Адресс магазин 1<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onClick="cheker_menu('ID магазина 2')" />&nbsp;Адресс магазин 2<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onClick="cheker_menu('ID магазина 3')" />&nbsp;Адресс магазин 3<br>
+					&nbsp;<input name="ва" type="checkbox" value="ва" onClick="cheker_menu('ID магазина 4')" />&nbsp;Адресс магазин 4<br>
+				</Form>
+			</div>
+
+			<a href="" class="nav1" border><span>&#9658;</span>&nbsp;Бренды</a>
+			<div class="subnav">
+				<Form>
+					&nbsp;<input name="ва" type="checkbox" value="Adidas" onClick="cheker_menu('ID бренда')" />&nbsp;Adidas<br>
+					&nbsp;<input name="ва" type="checkbox" value="Tree" onClick="cheker_menu('ID бренда')" />&nbsp;Tree<br>
+					&nbsp;<input name="ва" type="checkbox" value="Levi'S" onClick="cheker_menu('ID бренда')" />&nbsp;Levi'S<br>
+					&nbsp;<input name="ва" type="checkbox" value="Boss" onClick="cheker_menu('ID бренда')" />&nbsp;Boss<br>
+				</Form>
+			</div>
+
+			<a href="" class="nav1" border><span>&#9658;</span>&nbsp;Сезон</a>
+			<div class="subnav">
+				<Form>
+					<input name="ва" type="checkbox" value="Лето" onClick="cheker_menu('ID сезона')" />&nbsp;Лето<br>
+					<input name="ва" type="checkbox" value="Зима" onClick="cheker_menu('ID сезона')" />&nbsp;Зима<br>
+					<input name="ва" type="checkbox" value="Весна" onClick="cheker_menu('ID сезона')" />&nbsp;Весна<br>
+					<input name="ва" type="checkbox" value="Осень" onClick="cheker_menu('ID сезона')" />&nbsp;Осень<br>
+				</Form>
+			</div>
+
+			<a href="" class="nav1" border><span>&#9658;</span>&nbsp;Цена</a>
+			<div class="subnav">
+				<form>
+					от&nbsp;<input type="text" id="min" class="SearchPrice" placeholder="минимальная цена"><br>
+					до&nbsp;<input type="text" id="max" class="SearchPrice" placeholder="максимальная цена"><br>
+				</form><br>
+			</div>
+
+		</div>
+	</div>
+</div>
+<hr>
+</div>
+<div id="" class="FormSearchAnswer">
+<div id="" class="SearchAnswer">
+<hr>
+
+		<div id="564" class="ClothesPhoto" border>
+			<div><input type="checkbox"><span style="font-size: 10px">добавить в корзину</span></div>
+			<img src="Di31.png" width="140" height="200">
+			<label class="title">Adidas</label>
+			<label class="price">200'000 р.</label>
+
+			<div id="CompareForm">
+				<div>
+					<div>
+						<div class="table_art">Cезон</div><div class="table_data">Лето</div>
+					</div>
+					<br>
+					<div>
+						<div class="table_art">Материал</div><div class="table_data">хлопок</div>
+					</div>
+					<br>
+					<div>
+						<div class="table_art">Цвета</div>
+						<div class="table_data">
+							<div id="Colours" class="">
+								<div id="ColorFirst" class="Color"></div>
+								<div id="ColorSecond" class="Color"></div>
+								<div id="ColorThird" class="Color"></div>
+								<div id="ColorFourth" class="Color"></div>
+								<div id="ColorFifth" class="Color"></div>
+								<div id="ColorSixth" class="Color"></div>
+								<div id="ColorSeventh" class="Color"></div>
+								<div id="ColorEighth" class="Color"></div>
+								<div id="ColorNinth" class="Color"></div>
+								<div id="ColorTenth" class="Color"></div>
+								<div id="ColorEleventh" class="Color"></div>
+								<div id="ColorTwelfth" class="Color"></div>
+								<div id="ColorThirteenth" class="Color"></div>
+								<div id="ColorFourteenth" class="Color"></div>
+								<div id="ColorFifteenth" class="Color"></div>
+								<div id="ColorSixteenth" class="Color"></div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+					<div>
+						<div class="table_art">На складе</div><div class="table_data">есть на складе</div>
+					</div>
+					<br>
+					<div>
+						<div class="table_art">Размеры</div><div class="table_data">XL XXL XXXL</div>
+					</div>
+					<br>
+					<div>
+						<div class="table_art">Магазин</div><div class="table_data"><div id="Shops" class=""><a href="5.html">Показать на карте</a></div></div>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di33.png" width="140" height="200">
+            <label class="title">Boss</label>
+            <label class="price">600'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>        
+        <div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;"> добавить в корзину</span></input></div>
+            <img src="Di31.png" width="140" height="200"><span class="title">Adidas</span>
+            <label class="price">100'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+        
+        <div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di34.png" width="140" height="200">
+            <label class="title">Tree</label>
+			<label class="price">300'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">Зима</div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di32.png" width="140" height="200">
+            <label class="title">Levi'S</label>
+            <label class="price">200'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di34.png" width="140" height="200">
+            <label class="title">Tree</label>
+            <label class="price">200'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">Зима</div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di31.png" width="140" height="200"><span class="title">Adidas</span>
+            <label class="price">200'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di32.png" width="140" height="200">
+            <label class="title">Levi'S</label>
+            <label class="price">200'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di33.png" width="140" height="200">
+            <label class="title">Boss</label>
+            <label class="price">600'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+        
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di31.png" width="140" height="200"><span class="title">Adidas</span>
+            <label class="price">400'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di31.png" width="140" height="200"><span class="title">Adidas</span>
+            <label class="price">200'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di33.png" width="140" height="200">
+            <label class="title">Boss</label>
+            <label class="price">200'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+        
+        <div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di31.png" width="140" height="200"><span class="title">Adidas</span>
+            <label class="price">100'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+        
+        <div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di34.png" width="140" height="200">
+            <label class="title">Tree</label>
+            <label class="price">300'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">Зима</div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di32.png" width="140" height="200">
+            <label class="title">Levi'S</label>
+            <label class="price">200'000 р.</label>
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di34.png" width="140" height="200">
+            <label class="title">Tree</label>
+            <label class="price">200'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">Зима</div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+			<div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di31.png" width="140" height="200"><span class="title">Adidas</span>
+            <label class="price">200'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di32.png" width="140" height="200">
+            <label class="title">Levi'S</label>
+            <label class="price">200'000 р.</label>
+			
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+
+		<div id="" class="ClothesPhoto" border>
+            <div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di33.png" width="140" height="200">
+            <label class="title">Boss</label>
+            <label class="price">600'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+        </div>
+        
+		<div id="" class="ClothesPhoto" border>
+			<div><input type="checkbox"><span style="font-size:10px; vertical-align:middle;">добавить в корзину</span></input></div>
+            <img src="Di31.png" width="140" height="200"><span class="title">Adidas</span>
+            <label class="price">400'000 р.</label>
+            
+            <div id="CompareForm">
+              <div>
+                    <div>
+                        <div class="table_art">
+                            Cезон
+                        </div>
+                        <div class="table_data">
+                            Лето
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="table_art">
+                            Материал
+                        </div>
+                    <div class="table_data">
+                            хлопок
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Цвета
+                        </div>
+                    <div class="table_data">
+                        <div id="Colours" class="">
+                          <div id="ColorFirst" class="Color"></div>
+                          <div id="ColorSecond" class="Color"></div>
+                          <div id="ColorThird" class="Color"></div>
+                          <div id="ColorFourth" class="Color"></div>
+                          <div id="ColorFifth" class="Color"></div>
+                          <div id="ColorSixth" class="Color"></div>
+                          <div id="ColorSeventh" class="Color"></div>
+                          <div id="ColorEighth" class="Color"></div>
+                          <div id="ColorNinth" class="Color"></div>
+                          <div id="ColorTenth" class="Color"></div>
+                          <div id="ColorEleventh" class="Color"></div>
+                          <div id="ColorTwelfth" class="Color"></div>
+                          <div id="ColorThirteenth" class="Color"></div>
+                          <div id="ColorFourteenth" class="Color"></div>
+                          <div id="ColorFifteenth" class="Color"></div>
+                          <div id="ColorSixteenth" class="Color"></div>
+                          </div>
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            На складе
+                        </div>
+                    <div class="table_data">
+                            есть на складе
+                        </div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Размеры
+                        </div>
+                    <div class="table_data">XL XXL XXXL</div>
+                     </div>
+                     <br>
+                    <div>
+                        <div class="table_art">
+                            Магазин
+                        </div>
+                    <div class="table_data">
+                            <div id="Shops" class=""><a href="5.html">Показать на карте</a></div>    	</div>
+                     </div>
+                     <br>
+               </div>
+            </div>
+         </div>
+ 
+                <div id="foot">
+                <hr> 
+                	<div id="footer">
+                		                       
+                    	<div id="span1" class="classname">&copy;</div>
+      					<div id="span2">2012 - 1015 г. Все права защищены </div> 
+    	                <div id="span3">Создатели:<br><br>	Дмитрий Родионов <a href="mailto:killmeplease@mail.ru">написать письмо</a> <br>
+															Дмитрий Дацкевич <a href="mailto:enigmer@bk.ru">написать письмо</a></div><br>
+	               	</div>
+                </div>
+
+
+  </div>
+</div>
+<div id="Open_cart_container" class="up">
+    <br>
+    <div class="up" style="background:#A1D102 transparent !important; top:35%; position:relative; color:#192E1A;  font-size: 30px;">
+    	<br>&uarr;<br><br><br>
+    </div>
+</div>
+<div class="loading">
+	<div style=" top:25%; position:relative;">
+		В<br>а<br>ш<br> <br>з<br>а<br>п<br>р<br>о<br>с<br> <br>о<br>б<br>р<br>а<br>б<br>а<br>т<br>ы<br>в<br>а<br>е<br>т<br>ь<br>с<br>я
+	</div>
+</div>
+
+</body>
+</html>
